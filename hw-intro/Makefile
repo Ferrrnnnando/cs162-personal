@@ -12,7 +12,7 @@ default:
 	make limits
 
 map: map.c
-	$(CC) $(CFLAGS) map.c recurse.c -o map
+	$(CC) $(CFLAGS) map.c recurse.c -o map -D CS162
 
 limits: limits.c
 	$(CC) $(CFLAGS) limits.c -o limits

@@ -1,5 +1,9 @@
 limits
 map
+map.o
+map.i
+map.S
+recurse.o
 words/words
 !wc_sort.o
 !wc_sort_arm.o

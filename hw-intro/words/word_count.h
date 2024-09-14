@@ -34,6 +34,7 @@ Mutators take a reference to a list as first arg.
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <sys/types.h>
 
 /* Representation of a word count object.
    Includes next field for constructing singly linked list*/
@@ -50,7 +51,7 @@ typedef struct word_count WordCount;
 int init_words(WordCount **wclist);
 
 /* Length of a word count list */
-ssize_t len_words(WordCount *wchead);
+size_t len_words(WordCount *wchead);
 
 /* Find a word in a word_count list */
 WordCount *find_word(WordCount *wchead, char *word);
@@ -59,6 +60,8 @@ WordCount *find_word(WordCount *wchead, char *word);
 int add_word(WordCount **wclist, char *word);
 
 //static int wordcntcmp(const WordCount *wc1, WordCount *wc2);
+
+bool wordcount_less(const WordCount *wc1, const WordCount *wc2);
 
 /* print word counts to a file */
 void fprint_words(WordCount *wchead, FILE *ofile);
